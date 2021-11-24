@@ -22,6 +22,33 @@
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+
+
+    <style>
+      .collapsible {
+        background-color: #777;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+      }
+      
+      .activeone, .collapsible:hover {
+        background-color: #555;
+      }
+      
+      .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #f1f1f1;
+      }
+      </style>
+
   </head>
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -277,8 +304,10 @@
                 <div class="feature-29012 d-flex">
                   <div class="number mr-4"><span>1</span></div>
                   <div>
-                    <h3>Support education</h3>
-                    <p>To provide barsaries to the Vulnarable kids.</p>
+                    <button type="button" class="collapsible">Open Section 1</button>
+                    <div class="content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -287,9 +316,8 @@
                   <div class="number mr-4"><span>2</span></div>
                   <div>
                     <h3>Livelihood</h3>
-                    <p>To construct shelter for the poverty striken elderlers.
-                    </br>To provide clothes, bedsheets, mattresses, water conservers for the elderly.
-                    </p>
+                      <li>Promote early childhood servival programmes to fight  moterlity rates thru  promoring antinental programs &conducting basic health training & sensitisation for mothers.</li>
+                      <li>Conduct community health campaigns geared towards ensuring that everyone  gets to know their HIV/AIDS  status so as to control the spread of HIV/AIDS in the community and also teach about sexuality so,as to avoid  unwanted and teenage pregnancies in the communities.</li>
                   </div>
                 </div>
               </div>
@@ -530,6 +558,25 @@
     <script src="js/aos.js"></script>
 
     <script src="js/main.js"></script>
+
+
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+      
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+      </script>
 
   </body>
 
